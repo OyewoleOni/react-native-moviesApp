@@ -1,11 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Text, View } from 'react-native';
-import axios from 'axios';
-
-const getPopularMovies = async () => {
-  const resp = await axios.get('https://api.themoviedb.org/3/movie/popular?api_key=c916ba37617afe059d23d1cc59d0eb56')
-  return resp.data.results;
-}
+import { getPopularMovies } from './services/services';
 
 const App = () => {
   let title = 'movies name'
