@@ -39,7 +39,7 @@ const Home = () => {
                             />
             </View>
             <View style={styles.carousel}>
-                <List content={popularMovies} title="My List component title"/>
+                <List content={popularMovies} title="Popular Movies"/>
             </View>
       </>
     
