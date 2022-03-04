@@ -1,7 +1,13 @@
 import React, { PureComponent } from 'react'
 import { Text, View, TouchableOpacity, StyleSheet, Image } from 'react-native'
+import PropTypes from 'prop-types'
 
 const placeHolderImage = require('../assets/images/placeholder.png');
+
+const propTypes = {
+    item: PropTypes.object
+}
+
 export class Card extends PureComponent { 
   render() {
       const {item} = this.props;
@@ -40,4 +46,8 @@ const styles = StyleSheet.create({
         top: 10
     }
 })
+
+Card.propTypes = propTypes;
+
+export default Card;
 

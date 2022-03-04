@@ -1,8 +1,13 @@
 import React, { PureComponent } from 'react'
 import { Text, View, FlatList, StyleSheet, Dimensions } from 'react-native'
 import { Card } from './Card'
+import PropTypes from 'prop-types'
 
-export default class List extends PureComponent {
+const propTypes = {
+    title: PropTypes.string,
+    content : PropTypes.object,
+}
+export class List extends PureComponent {
   render() {
       const {title, content} = this.props
     return (
@@ -33,3 +38,7 @@ const styles = StyleSheet.create({
     },
    
 })
+
+List.propTypes = propTypes;
+
+export default List;
