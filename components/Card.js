@@ -13,7 +13,7 @@ export class Card extends PureComponent {
       const {item, navigation} = this.props;
     return (
       <TouchableOpacity style={styles.container} 
-              onPress={() => navigation.navigate('Detail', {movieDetail: item})}>
+              onPress={() => navigation.navigate('Detail', {movieId: item.id})}>
           <Image 
                  style={styles.image} 
                  source={

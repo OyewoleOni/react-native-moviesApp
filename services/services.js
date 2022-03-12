@@ -38,4 +38,11 @@ export const getPopularTv = async () => {
    return resp.data.results;
  }
 
+ export const getMovie = async (id) => {
+   const resp = await axios.get(
+      `${baseURL}/movie/${id}?${apiKey}` )
+   return resp.data;
+ }
+
+
   
