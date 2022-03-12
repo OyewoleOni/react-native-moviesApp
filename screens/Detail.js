@@ -1,6 +1,8 @@
 import React, { useEffect, useState} from 'react';
 import {View,Text, ScrollView, Image, StyleSheet, Dimensions, ActivityIndicator} from 'react-native';
 import { getMovie } from '../services/services';
+import StarRating from 'react-native-star-rating';
+import dateFormat from 'dateformat';
 
 const placeHolderImage = require('../assets/images/placeholder.png');
 const height = Dimensions.get('screen').height;
@@ -37,7 +39,14 @@ const Detail = ({route, navigation}) => {
                            
                        </View>
                    )}
-                    
+                    <StarRating 
+                            disabled={true} 
+                            fullStarColor={'gold'} 
+                            maxStars={5} 
+                            starSize={25}
+                            rating={movieDetail.vote_average /2}/>
+                    <Text style={styles.overview}>{movieDetail.overview}</Text>
+                    <Text style={styles.release_date}>{'Release Date: ' + dateFormat(movieDetail.release_date, 'mmmm dS, yyyy')}</Text>
                 </View>
                
             </ScrollView>
@@ -56,14 +65,22 @@ const styles = StyleSheet.create({
     genresContainer: {
         flexDirection: 'row',
         alignContent: 'center',
-        marginTop: 20
+        marginTop: 20,
+        marginBottom: 10
     },
+
     genre : {
         marginRight: 10,
         fontWeight: 'bold'
     },
     image : {
         height: height / 2.5,
+    },
+    overview : {
+        padding: 15
+    },
+    release_date: {
+        fontWeight: 'bold'
     },
     movieTitle: {
         fontSize : 24,
