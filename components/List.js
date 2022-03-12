@@ -9,7 +9,7 @@ const propTypes = {
 }
 export class List extends PureComponent {
   render() {
-      const {title, content} = this.props
+      const {title, content, navigation} = this.props
     return (
         <>
             <View style={styles.list}>
@@ -18,7 +18,7 @@ export class List extends PureComponent {
             <View>
                 <FlatList data={content} 
                             horizontal = {true}
-                            renderItem={({item}) => <Card item={item} />}/>
+                            renderItem={({item}) => <Card navigation={navigation} item={item} />}/>
             </View>
         </>
       

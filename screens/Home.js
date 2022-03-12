@@ -6,7 +6,7 @@ import List from '../components/List';
 import { getPopularMovies, getUpcomingMovies, getPopularTv, getFamilyMovies, getDocumentary } from '../services/services';
 
 const dimensions = Dimensions.get('screen');
-const Home = () => {
+const Home = ({navigation}) => {
     let title = 'movies name'
     const [moviesImages, setMoviesImages] = useState([]);
     const [popularMovies, setPopularMovies] = useState([]);
@@ -74,7 +74,7 @@ const Home = () => {
                 {/* Popular Movies */}
                 {popularMovies && (
                     <View style={styles.carousel}>
-                            <List content={popularMovies} title="Popular Movies"/>
+                            <List navigation={navigation} content={popularMovies} title="Popular Movies"/>
                     </View>
                 )} 
     
@@ -82,21 +82,21 @@ const Home = () => {
                 {/* PopularTv */}
                 {popularTv && (
                     <View style={styles.carousel}>
-                        <List content={popularTv} title="Popular Tv Shows"/>
+                        <List navigation={navigation} content={popularTv} title="Popular Tv Shows"/>
                     </View>
                 )}
     
                 {/* family Movies */}
                 {familyMovies && (
                     <View style={styles.carousel}>
-                        <List content={familyMovies} title="Family Movies"/>
+                        <List navigation={navigation} content={familyMovies} title="Family Movies"/>
                     </View>
                 )} 
     
                 {/* documentary */}
                 {documentary && (
                     <View style={styles.carousel}>
-                        <List content={documentary} title="Documentaries"/>
+                        <List navigation={navigation} content={documentary} title="Documentaries"/>
                     </View>
                 )}
                 

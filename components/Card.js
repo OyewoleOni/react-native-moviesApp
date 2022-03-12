@@ -10,9 +10,10 @@ const propTypes = {
 
 export class Card extends PureComponent { 
   render() {
-      const {item} = this.props;
+      const {item, navigation} = this.props;
     return (
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={styles.container} 
+              onPress={() => navigation.navigate('Detail', {movieDetail: item})}>
           <Image 
                  style={styles.image} 
                  source={
