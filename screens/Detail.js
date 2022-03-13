@@ -3,6 +3,7 @@ import {View,Text, ScrollView, Image, StyleSheet, Dimensions, ActivityIndicator}
 import { getMovie } from '../services/services';
 import StarRating from 'react-native-star-rating';
 import dateFormat from 'dateformat';
+import PlayButton from '../components/PlayButton';
 
 const placeHolderImage = require('../assets/images/placeholder.png');
 const height = Dimensions.get('screen').height;
@@ -28,6 +29,9 @@ const Detail = ({route, navigation}) => {
                       : placeHolderImage                    
                     }/>
                 <View style={styles.container}>
+                    <View style={styles.playButton}>
+                        <PlayButton/>
+                    </View>
                     <Text style={styles.movieTitle}>{movieDetail.title}</Text>
                    {movieDetail.genres && (
                        <View style={styles.genresContainer}>
@@ -68,7 +72,11 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 10
     },
-
+    playButton: {
+        position: 'absolute',
+        top: -30,
+        right: 20
+    },
     genre : {
         marginRight: 10,
         fontWeight: 'bold'
