@@ -68,8 +68,10 @@ const Detail = ({route, navigation}) => {
                 <Modal animationType='slide' visible={modalVisible}>
                     <View style={styles.videoModal}>
                     <VideoPlayer
+                        onBack={() => {videoShown()}}
                         source={{uri: 'https://vjs.zencdn.net/v/oceans.mp4'}}
-                        />
+                        navigator={navigation}
+                    />
                         {/* <Pressable onPress={() => videoShown()}>
                             <Text>{'Test'}</Text>
                         </Pressable> */}
