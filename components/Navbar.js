@@ -20,7 +20,7 @@ class Navbar extends React.PureComponent {
                    (<View style={styles.mainNav}>
                        <Image style={styles.logo} source={require('../assets/images/movies.png')}/>
                        <TouchableOpacity onPress={() => {navigation.navigate('Search')}}>
-                            <Icon name={'search-outline'} size={30} color={'red'}/>
+                            <Icon name={'search-outline'} size={40} color={'red'}/>
                         </TouchableOpacity>
                    </View>)
                  : (<View>
