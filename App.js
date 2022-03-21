@@ -12,11 +12,13 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={{
-          headerTransparent: true
+          headerTransparent: true,
+          headerTitle: false,
+          header: ({navigation}) => <Navbar navigation={navigation} main={true} />
         }} />
         <Stack.Screen name="Detail" component={Detail}  options={{
           headerTransparent: true,
-          header: ({navigation}) => <Navbar navigation={navigation}/>
+          header: ({navigation}) => <Navbar navigation={navigation} main= {false}/>
         }} />
       </Stack.Navigator>
     </NavigationContainer>
